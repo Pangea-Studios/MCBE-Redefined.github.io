@@ -1,0 +1,160 @@
+body {
+  background-color: rgb(10, 10, 10);
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+#navbar {
+  top: 0;
+  position: sticky;
+  text-decoration: none;
+  overflow: hidden;
+  width: 100%;
+  background-color: rgb(30, 30, 30);
+  color: black;
+}
+
+#navbar a.navLink {
+  cursor: pointer;
+  float: left;
+  display: inline;
+  margin: 0;
+  color: white;
+  background-color: rgb(30, 30, 30);
+  padding: 16px 32px 16px 32px;
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease-in-out;
+}
+
+#navbar a.navLink .text {
+  position: relative;
+  z-index: 1;
+}
+
+#navbar a.navLink:before {
+  content: "";
+  position: absolute;
+  background: white;
+
+  /* New color that slides in */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  transition: top 0.3s ease-in-out;
+  z-index: 0;
+}
+
+#navbar a.navLink:hover:before {
+  top: 0;
+  /* Slide in from the bottom */
+}
+
+#navbar a.navLink:hover {
+  color: black;
+}
+
+#navbar a.downloadLink {
+  border-radius: 10px;
+  background: linear-gradient(
+    to right,
+    #77530a,
+    #ffd277,
+    #77530a,
+    #77530a,
+    #ffd277,
+    #77530a
+  );
+  background-size: 250%;
+  background-position: left;
+  margin: 8px;
+  cursor: pointer;
+  float: right;
+  padding: 8px 16px 8px 16px;
+  border-radius: 8px;
+  transition-duration: 1s;
+  color: #ffd277;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar a.downloadLink::before {
+  position: absolute;
+  content: "DOWNLOAD NOW!";
+  color: #ffd277;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  transition-duration: 1s;
+  background-color: rgba(0, 0, 0, 0.842);
+  background-size: 200%;
+}
+
+#navbar a.downloadLink:hover {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+#navbar a.downloadLink:hover::before {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.title {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.title img{
+  width: 100%;
+  height : auto;
+  display: block;
+}
+
+.title .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(10,10,10,1) 33.33%, rgba(255,255,255,0) 100%);
+}
+
+.title .text {
+  position: absolute;
+  top: 75%;
+  margin-left: 10%;
+  transform: translate(-10%, -75%);
+  text-align: left;
+  color: white;
+  z-index: 100;
+}
+
+.title .text h1 {
+  font-size: 2.5em;
+}
+
+.title .text h2 {
+  font-size: 1.5em;
+}
+
+.title svg {
+  position: absolute;
+  top: 75%;
+  margin-right: 10%;
+  transform: translate(10%, -75%);
+  text-align: right;
+  color: white;
+  z-index: 100;
+  size: 4em;
+}
