@@ -20,13 +20,14 @@ body {
   float: left;
   display: inline;
   margin: 0;
-  color: white;
+  color: rgb(230, 230, 230);
   background-color: rgb(30, 30, 30);
-  padding: 16px 32px 16px 32px;
+  padding: 1vh 2vh 1vh 2vh;
   transition: background-color 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
   transition: color 0.3s ease-in-out;
+  font-size: 1.65vh;
 }
 
 #navbar a.navLink .text {
@@ -38,8 +39,6 @@ body {
   content: "";
   position: absolute;
   background: white;
-
-  /* New color that slides in */
   bottom: 0;
   left: 0;
   right: 0;
@@ -50,7 +49,6 @@ body {
 
 #navbar a.navLink:hover:before {
   top: 0;
-  /* Slide in from the bottom */
 }
 
 #navbar a.navLink:hover {
@@ -58,7 +56,7 @@ body {
 }
 
 #navbar a.downloadLink {
-  border-radius: 10px;
+  font-size: 1.4vh;
   background: linear-gradient(
     to right,
     #77530a,
@@ -70,11 +68,11 @@ body {
   );
   background-size: 250%;
   background-position: left;
-  margin: 8px;
+  margin: 0.5vh;
   cursor: pointer;
   float: right;
-  padding: 8px 16px 8px 16px;
-  border-radius: 8px;
+  padding: 0.5vh 1vh 0.5vh 1vh;
+  border-radius: 1vh;
   transition-duration: 1s;
   color: #ffd277;
   position: relative;
@@ -92,7 +90,7 @@ body {
   justify-content: center;
   width: 97%;
   height: 90%;
-  border-radius: 8px;
+  border-radius: 1vh;
   transition-duration: 1s;
   background-color: rgba(0, 0, 0, 0.842);
   background-size: 200%;
@@ -141,22 +139,27 @@ body {
   margin-left: 10%;
   transform: translate(-10%, -75%);
   text-align: left;
-  color: white;
+  color: rgb(230, 230, 230);
   z-index: 100;
   width: 80%;
-}
-
-.title .text h1 {
-  font-size: 2.5em;
-}
-
-.title .text h2 {
-  margin-left: 10%;
-  font-size: 1.5em;
+  height: 15vh;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
 }
 
 .title .text svg {
-  float: left;
-  height: auto;
-  width: 15%;
+  width: auto;
+  height: 100%;
+}
+
+.title .text .headings h1 {
+  font-size: 4.5vh;
+  margin-bottom: 0;
+}
+
+.title .text .headings h2 {
+  margin-top: 0;
+  font-size: 3vh;
+  font-weight: lighter;
 }
