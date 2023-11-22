@@ -1,33 +1,52 @@
+:root {
+  --bg : #4370aa;
+  --medium: #1d2148;
+  --dark: #181c3c;
+  --light: #41467b; 
+  --xtra_dark: #13162f;
+  --white: rgb(230, 230, 230);
+  --grey: rgb(160, 160, 160);
+}
+
 body {
-  background-color: rgb(10, 10, 10);
+  background-color: var(--bg);
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Arial";
   overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 #navbar {
+  z-index: 1000;
   top: 0;
   position: sticky;
   text-decoration: none;
   overflow: hidden;
   width: 100%;
-  background-color: rgb(30, 30, 30);
+  background-color: var(--dark);
   color: black;
+  
 }
 
 #navbar a.navLink {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: lighter;
   cursor: pointer;
-  float: left;
-  display: inline;
   margin: 0;
-  color: rgb(230, 230, 230);
-  background-color: rgb(30, 30, 30);
-  padding: 1vh 2vh 1vh 2vh;
+  color: var(--white);
+  background-color: var(--dark);
+  padding: 1vh 2vh;
   transition: background-color 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
   transition: color 0.3s ease-in-out;
-  font-size: 1.65vh;
+  font-size: 1vh;
 }
 
 #navbar a.navLink .text {
@@ -38,7 +57,7 @@ body {
 #navbar a.navLink:before {
   content: "";
   position: absolute;
-  background: white;
+  background: var(--white);
   bottom: 0;
   left: 0;
   right: 0;
@@ -52,114 +71,152 @@ body {
 }
 
 #navbar a.navLink:hover {
-  color: black;
+  color: var(--dark);
 }
 
-#navbar a.downloadLink {
-  font-size: 1.4vh;
-  background: linear-gradient(
-    to right,
-    #77530a,
-    #ffd277,
-    #77530a,
-    #77530a,
-    #ffd277,
-    #77530a
-  );
-  background-size: 250%;
-  background-position: left;
-  margin: 0.5vh;
-  cursor: pointer;
+#navbar a.navLink.left {
+  float: left;
+}
+
+#navbar a.navLink.right {
   float: right;
-  padding: 0.5vh 1vh 0.5vh 1vh;
-  border-radius: 1vh;
-  transition-duration: 1s;
-  color: #ffd277;
-  position: relative;
-  display: flex;
-  align-items: center;
+}
+
+.main {
+  align-content: center;
   justify-content: center;
-}
-
-#navbar a.downloadLink::before {
-  position: absolute;
-  content: "DOWNLOAD NOW!";
-  color: #ffd277;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 97%;
-  height: 90%;
-  border-radius: 1vh;
-  transition-duration: 1s;
-  background-color: rgba(0, 0, 0, 0.842);
-  background-size: 200%;
-}
-
-#navbar a.downloadLink:hover {
-  background-position: right;
-  transition-duration: 1s;
-}
-
-#navbar a.downloadLink:hover::before {
-  background-position: right;
-  transition-duration: 1s;
-}
-
-.title {
-  position: relative;
-  width: 100%;
   height: 100%;
-  overflow: hidden;
+  width: 100%;
+  min-height: 90vh;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
 }
 
-.title img {
+.main h1 {
+  color: var(--white);
+  align-self: center;
+  margin-top: 2vh;
+  text-align: center;
+  margin-bottom: 2vh;
+  font-size: 7vh;
+}
+
+.main h2 {
+  font-weight: lighter;
+  color: var(--white);
+  font-size: 2vh;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.main button {
+  background-color: var(--white);
+  border: none;
+  font-size: 16px;
+  border-radius: 0.5vh;
+  padding: 1vh 2vh 1vh 2vh;
+  color: var(--dark);
+  cursor: pointer;
+  text-align: center;
+  align-self: center;
+  transition-duration: 0.3s;
+  display: inline;
+  color: var(--xtra_dark);
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease-in-out;
+}
+
+.main button text {
+  position: relative;
+  padding: 0 0 0 0;
+  z-index: 1;
+}
+
+.main button:before {
+  content: "";
+  border: none;
+  position: absolute;
+  background: var(--xtra_dark);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  transition: top 0.3s ease-in-out;
+  z-index: 0;
+}
+
+.main button:hover:before {
+  top: 0;
+}
+
+.main button:hover {
+  color: var(--white);
+}
+
+.cards {
+  flex: 0;
   width: 100%;
   height: auto;
-  display: block;
-}
-
-.title .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    0deg,
-    rgba(10, 10, 10, 1) 0%,
-    rgba(10, 10, 10, 1) 33.33%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
-
-.title .text {
-  position: absolute;
-  top: 75%;
-  margin-left: 10%;
-  transform: translate(-10%, -75%);
-  text-align: left;
-  color: rgb(230, 230, 230);
-  z-index: 100;
-  width: 80%;
-  height: 15vh;
-  flex: 0 0 auto;
+  margin-top: 10vh;
   display: flex;
+  vertical-align: top;
   align-items: flex-start;
+  justify-content: left;
+  background-color: var(--medium);
 }
 
-.title .text svg {
+.cards .card {
+  width: 25%;
+  height: 20vh;
+  display: flex;
+  padding: 2.5vh;
+  align-items: flex-start;
+  flex-direction: column;
+  transform: skew(-10deg);
+  justify-content: flex-start;
+}
+
+.cards .card.a {
+  background-color: var(--dark);
+}
+
+.cards .card svg {
+  transform: skew(10deg);
   width: auto;
-  height: 100%;
+  height: 4vh;
+  fill: var(--white);
 }
 
-.title .text .headings h1 {
-  font-size: 4.5vh;
-  margin-bottom: 0;
+.cards .card h2 {
+  transform: skew(0deg);
+  color: var(--white);
+  font-size: 2.5vh;
 }
 
-.title .text .headings h2 {
-  margin-top: 0;
-  font-size: 3vh;
+.cards .card span {
+  transform: skew(0deg);
+  color: var(--grey);
+  font-size: 1.5vh;
+}
+
+.footer {
+  padding: 2vh;
+  width: 100%;
+  height: auto;
+  background-color: var(--xtra_dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .copyright-text {
+  color: var(--white);
+  font-size: 1.5vh;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   font-weight: lighter;
 }
